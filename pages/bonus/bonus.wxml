@@ -1,0 +1,43 @@
+<view class="container">
+  <base-header navOpacity="{{navOpacity}}" title="奖金账户" titleColor="{{titleColor}}"></base-header>
+  <view class="bg-img">
+    <image src="/static/img/other/bonus-bg.png" style="height:{{150+capsuleToTop}}px"></image>
+  </view>
+  <view class="card-wrap flex-dc frame">
+    <view class="balance">{{reward}}</view>
+    <view class="name">余额</view>
+    <view class="operation-wrap flex">
+      <view bind:tap="openToBalance" class="operation-item flex-cc">
+        <image src="/static/img/other/balance.png"></image>
+        <text>转账至余额</text>
+      </view>
+      <view bind:tap="openWithdraw" class="operation-item flex-cc">
+        <image src="/static/img/other/withdraw.png"></image>
+        <text>立即提现</text>
+      </view>
+    </view>
+  </view>
+  <view class="list-wrap">
+    <block wx:if="{{rewardList.length}}">
+      <view wx:for="{{rewardList}}" wx:key="id" class="list-item flex">
+        <view class="left-info flex-ds">
+          <view class="name">{{item.class_str}}</view>
+          <view class="time">{{item.create_time}}</view>
+        </view>
+        <view class="right-info">
+          <view class="come-out">{{item.amount}}</view>
+        </view>
+      </view>
+    </block>
+    <!-- <view class="list-item flex">
+      <view class="left-info flex-ds">
+        <view class="name">获取奖金</view>
+        <view class="time">2020.10.21</view>
+      </view>
+      <view class="right-info">
+        <view class="come-out">-150</view>
+      </view>
+    </view> -->
+    <base-no-list wx:else title="暂无记录"></base-no-list>
+  </view>
+</view>

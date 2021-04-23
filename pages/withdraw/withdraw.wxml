@@ -1,0 +1,55 @@
+<view class="container">
+  <base-header title="提现"></base-header>
+  <view class="title">
+    提现金额
+    <text class="sub-title">(手续费：{{cashShouxu}}%)</text>
+  </view>
+  <view class="input-wrap">
+    <input type="digit" value="{{updataForm.apply_amount}}" data-name="updataForm.apply_amount" bind:input="setInputVal" placeholder="至少提现{{cashMin}}元" />
+  </view>
+  <view class="form-wrap">
+    <view class="form-item flex">
+      <view class="name">提现选择</view>
+      <view class="value-wrap">
+        <van-dropdown-menu active-color="#1989fa">
+          <van-dropdown-item value="{{ updataForm.type }}" options="{{ typeList }}" bind:change="changeType" />
+        </van-dropdown-menu>
+      </view>
+    </view>
+    <view class="form-item flex">
+      <view class="name">收款人姓名</view>
+      <view class="value-wrap">
+        <input value="{{updataForm.realname}}" placeholder="输入真实姓名" data-name="updataForm.realname" bind:input="setInputVal" />
+      </view>
+    </view>
+    <view class="form-item flex">
+      <block wx:if="{{updataForm.type === 'AMT'}}">
+        <view class="name">银行卡号</view>
+        <view class="value-wrap">
+          <input value="{{updataForm.account}}" placeholder="输入银行卡号" data-name="updataForm.account" bind:input="setInputVal" />
+        </view>
+      </block>
+      <block wx:else>
+        <view class="name">支付宝账号</view>
+        <view class="value-wrap">
+          <input value="{{updataForm.account}}" placeholder="输入支付宝账号" data-name="updataForm.account" bind:input="setInputVal" />
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{updataForm.type === 'AMT'}}" class="form-item flex">
+      <view class="name">开户行</view>
+      <view class="value-wrap">
+        <input value="{{updataForm.bank}}" placeholder="输入开户行" data-name="updataForm.bank" bind:input="setInputVal" />
+      </view>
+    </view>
+    <view bind:tap="openRecord" class="form-item flex">
+      <view class="name">提现记录</view>
+      <view class="value-wrap">
+        <van-icon name="arrow" />
+      </view>
+    </view>
+  </view>
+  <view class="btn-wrap">
+    <base-btn btnName="立即提现" btn-style="btn-style" :isPushing="isPushing" bind:handleTap="confirmWithdraw"></base-btn>
+  </view>
+</view>

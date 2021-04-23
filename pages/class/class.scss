@@ -1,0 +1,27 @@
+.container {
+  .bg-img {
+    top: 0;
+    position: fixed;
+    z-index: -1;
+    image {
+      width: 750rpx;
+    }
+  }
+  .search-wrap {
+    margin: 30rpx;
+  }
+  .content-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .no-login {
+    .no-list {
+      margin-bottom: 40rpx;
+    }
+  }
+}

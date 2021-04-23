@@ -1,0 +1,43 @@
+.container .record-wrap .list-wrap {
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  padding: 20rpx 0;
+}
+
+.container .record-wrap .list-wrap .list-item {
+  padding: 20rpx 50rpx;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.container .record-wrap .list-wrap .list-item:nth-child(2n) {
+  background-color: #fff7f3;
+}
+
+.container .record-wrap .list-wrap .list-item .left-info .name {
+  font-size: 26rpx;
+  line-height: 46rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+}
+
+.container .record-wrap .list-wrap .list-item .left-info .time {
+  font-size: 26rpx;
+  line-height: 46rpx;
+  letter-spacing: 0rpx;
+  color: #999999;
+}
+
+.container .record-wrap .list-wrap .list-item .right-info {
+  font-size: 30rpx;
+  line-height: 46rpx;
+  letter-spacing: 0rpx;
+}
+
+.container .record-wrap .list-wrap .list-item .right-info .come-in {
+  color: #ff3636;
+}
+
+.container .record-wrap .list-wrap .list-item .right-info .come-out {
+  color: #3682ff;
+}

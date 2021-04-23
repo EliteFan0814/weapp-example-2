@@ -1,0 +1,43 @@
+<view class="container">
+  <block wx:if="{{isLogin}}">
+    <base-header navOpacity="{{navOpacity}}" title="瓶里香" titleColor="{{titleColor}}" showLeft="{{false}}"></base-header>
+    <view class="bg-img">
+      <image src="/static/img/index/top-bg.png" style="height:{{150+capsuleToTop}}px"></image>
+    </view>
+    <!-- 轮播图 -->
+    <view class="swiper-wrap frame">
+      <base-swiper swiperList="{{swiperList}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"></base-swiper>
+    </view>
+    <view class="class-swiper">
+      <base-class-swiper classArr="{{classArr}}" pageNum="4" pageRows="1"></base-class-swiper>
+    </view>
+    <!-- 推荐商品 -->
+    <view class="recommend-wrap">
+      <view class="title">推荐商品专区</view>
+      <view class="good-wrap">
+        <view wx:for="{{goodsList}}" wx:key="goods_id" bind:tap="buyGood" data-id="{{item.goods_id}}" class="item-wrap">
+          <view class="good-item">
+            <view class="img-wrap">
+              <image class="good-img" mode="widthFix" src="{{item.picurl}}"></image>
+            </view>
+            <view class="btm-wrap">
+              <view class="name">{{item.name}}</view>
+              <view class="sold">已售：{{item.sales_volume}}</view>
+              <view class="price-wrap">
+                <text class="now">￥{{item.price}}</text>
+                <text class="sub">￥{{item.market_price}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <base-header title="瓶里香" showLeft="{{false}}"></base-header>
+    <view class="no-login flex-dc">
+      <base-no-list class="no-list" title="您还未登录，请先登录"></base-no-list>
+      <base-btn btnName="立即登录" bind:handleTap="openLoginPage"></base-btn>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,35 @@
+<!-- pages/myTeam/myTeam.wxml -->
+<view class="container">
+  <!-- <base-header title="我的团队" navOpacity="{{0}}" titleColor="#fff" iconColor="#fff"></base-header> -->
+  <base-header title="我的团队"></base-header>
+  <!-- <view class="top">
+    <image src="/static/img/personal/bg2.png" class="bg" style="height:{{195+capsuleToTop}}px;" />
+    <view class="flex">
+      <view>
+        <view class="num">{{account.totalRebate}}</view>
+        <view class="text">总收益</view>
+      </view>
+      <view>
+        <view class="num">{{account.leaderAccount}}</view>
+        <view class="text">余额</view>
+      </view>
+    </view>
+  </view> -->
+  <view class="team-wrap">
+    <view class="team-list" wx:if="{{teamList.length}}">
+      <view class="team-item" wx:for="{{teamList}}" wx:key="memberId">
+        <view class="top flex">
+          <image src="{{item.thumb}}"></image>
+          <view class="info">
+            <view class="name">{{item.nickname}}</view>
+            <view class="flex">
+              <view>账户余额：{{item.amount}}</view>
+              <view>奖金余额：{{item.reward}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <base-no-list wx:else title="暂无成员"></base-no-list>
+  </view>
+</view>

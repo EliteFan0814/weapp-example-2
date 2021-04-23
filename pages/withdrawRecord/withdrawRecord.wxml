@@ -1,0 +1,30 @@
+<view class="container">
+  <base-header title="提现记录"></base-header>
+  <view class="record-wrap">
+    <view class="list-wrap">
+      <block wx:if="{{recordList.length}}">
+        <view wx:for="{{recordList}}" wx:key="id" class="list-item flex">
+          <view class="left-info flex-ds">
+            <view class="name">类型：{{item.type_str}}</view>
+            <view class="name">账号：{{item.account}}</view>
+            <!-- <view class="name">{{item.bank}}</view> -->
+            <view class="time">提现时间：{{item.apply_time}}</view>
+          </view>
+          <view class="right-info">
+            <view class="come-out">{{item.apply_amount}}</view>
+          </view>
+        </view>
+      </block>
+      <!-- <view class="list-item flex">
+      <view class="left-info flex-ds">
+        <view class="name">获取奖金</view>
+        <view class="time">2020.10.21</view>
+      </view>
+      <view class="right-info">
+        <view class="come-out">-150</view>
+      </view>
+    </view> -->
+      <base-no-list wx:else title="暂无记录"></base-no-list>
+    </view>
+  </view>
+</view>

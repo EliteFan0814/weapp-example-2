@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  background-color: #5a453b;
+  .bg-img {
+    // top: 0;
+    // position: absolute;
+    image {
+      width: 750rpx;
+      display: block;
+    }
+  }
+  .gift-img {
+    position: fixed;
+    left: 52%;
+    transform: translateX(-50%);
+    width: 150rpx;
+    height: 149rpx;
+  }
+  .content-wrap {
+    background-color: #fff;
+    .text {
+      padding-top: 60rpx;
+      font-size: 30rpx;
+      line-height: 30rpx;
+      letter-spacing: 1.5rpx;
+      color: #333333;
+      font-weight: bold;
+      margin-bottom: 20rpx;
+    }
+    .img-wrap{
+      image{
+        border: 1px solid red;
+        width: 200rpx;
+        height: 200rpx;
+      }
+    }
+  }
+}

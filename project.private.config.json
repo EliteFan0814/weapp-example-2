@@ -1,0 +1,102 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "提现账户",
+          "pathName": "pages/team/team",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "搜索结果",
+          "pathName": "pages/searchResults/searchResults",
+          "query": "value=是",
+          "scene": null
+        },
+        {
+          "name": "购物车",
+          "pathName": "pages/cart/cart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "编辑地址",
+          "pathName": "pages/addressEdit/addressEdit",
+          "query": "title=新增地址&type=add",
+          "scene": null
+        },
+        {
+          "name": "订单",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "公告详情",
+          "pathName": "pages/announcementDetail/announcementDetail",
+          "query": "id=5",
+          "scene": null
+        },
+        {
+          "name": "奖金账户",
+          "pathName": "pages/bonus/bonus",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "立即提现",
+          "pathName": "pages/withdraw/withdraw",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "登录",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "禁用",
+          "pathName": "pages/forbidden/forbidden",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "确认订单",
+          "pathName": "pages/confirmOrder/confirmOrder",
+          "query": "type=buyNow&id=5&num=1",
+          "scene": null
+        },
+        {
+          "name": "客户订单",
+          "pathName": "pages/clientOrder/clientOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "立即提现",
+          "pathName": "pages/withdraw/withdraw",
+          "query": "cashMin=100&cashShouxu=1",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

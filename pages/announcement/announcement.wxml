@@ -1,0 +1,19 @@
+<!-- pages/announcement/announcement.wxml -->
+<view class="container">
+    <base-header title="平台公告"></base-header>
+    <view wx:if="{{articleList.length}}" class="articleList frame">
+        <view wx:for="{{articleList}}" wx:key="id" data-id="{{item.id}}" class="articleList-item flex" bindtap="openDetail">
+            <view class="img flex-cc">
+                <image mode="aspectFit" src="{{item.picurl}}"></image>
+            </view>
+            <view class="info">
+                <view class="info-title omit-1">{{item.title}}</view>
+                <!-- <view class="info-desc omit-2 ">
+                    这里是文章内容这里是文章内容这里是文章内容这里是文章内容这里是文章内容这里是文章内容这里是文章内容这里是文章内容这里是文章内容这里是文章内容这里是文章内容这里是文章内容
+                </view> -->
+                <view class="info-date">{{item.create_time}}</view>
+            </view>
+        </view>
+    </view>
+    <base-no-list wx:else title="暂无平台公告"></base-no-list>
+</view>

@@ -1,0 +1,38 @@
+<view class="base-class-list" style="height:calc(100vh - {{residueHeight}}px)">
+  <!-- 左侧分类 -->
+  <view class="aside-wrap {{hideScrollBar?'hide-scroll-bar':''}}">
+    <view bind:tap="handleClick" wx:for="{{classList}}" wx:key="id" data-index="{{index}}" data-id="{{item.cate_id}}" class="class-item {{index === activeItemIndex?'active-item':''}}">
+      <view class="item omit-1 ">{{item.name}}</view>
+    </view>
+  </view>
+  <!-- 右侧内容 -->
+  <view class="content-wrap">
+    <scroll-view wx:if="{{classItemList.length}}" scroll-y="{{true}}" style="height:calc(100vh - {{residueHeight+5}}px)"
+     bindscrolltolower="scrollLowerGetList"
+     refresher-enabled="{{true}}" 
+     refresher-threshold="{{100}}" 
+    refresher-default-style="black" 
+    refresher-triggered="{{triggered}}" 
+    bindrefresherrefresh="onRefresh"
+      class="scroll-view">
+      <view wx:for="{{classItemList}}" wx:key="index" data-id="{{item.goods_id}}" bind:tap="openGoodDetail" class="normal-good-item">
+        <view class="img-wrap">
+          <image mode="aspectFill" src="{{item.picurl}}" class="item-img"></image>
+        </view>
+        <view class="name-wrap">
+          <view class="name omit-2">{{item.name}}</view>
+          <view class="sub-name">
+            <text>已售{{item.sales_volume}}件</text>
+            <!-- <image class="sub-icon" src="/static/img/index/crown.png"></image> -->
+            <!-- <text>碎片</text> -->
+          </view>
+          <view class="price-wrap">
+            <text class="red">￥{{item.price}}</text>
+            <text class="grey">￥{{item.market_price}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <base-no-list wx:else title="暂无商品"></base-no-list>
+  </view>
+</view>

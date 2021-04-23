@@ -1,0 +1,193 @@
+.container {
+  position: relative;
+  background-color: #f6f6f6;
+}
+
+.container .bg-img {
+  top: 0;
+  position: absolute;
+}
+
+.container .bg-img image {
+  width: 750rpx;
+}
+
+.container .content-wrap {
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.container .content-wrap .info-wrap {
+  padding: 0 60rpx;
+  margin-bottom: 25rpx;
+}
+
+.container .content-wrap .property-wrap {
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+
+.container .content-wrap .property-wrap .property-item {
+  font-size: 26rpx;
+  line-height: 30rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.container .content-wrap .property-wrap .property-item .name {
+  margin-bottom: 10rpx;
+}
+
+.container .content-wrap .property-wrap .property-item .value {
+  font-size: 30rpx;
+  color: #ff7436;
+}
+
+.container .content-wrap .property-wrap .property-item .bill {
+  padding: 20rpx 25rpx;
+  font-size: 26rpx;
+  line-height: 21.55rpx;
+  letter-spacing: 0rpx;
+  color: #999999;
+  background-color: #f5f5f5;
+  border-radius: 30rpx;
+}
+
+.container .content-wrap .profit-wrap {
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  padding: 50rpx 80rpx 30rpx;
+  margin-bottom: 24rpx;
+}
+
+.container .content-wrap .profit-wrap .name {
+  font-size: 26rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+
+.container .content-wrap .profit-wrap .value {
+  font-size: 30rpx;
+  letter-spacing: 1.5rpx;
+  color: #333333;
+}
+
+.container .content-wrap .profit-wrap .all {
+  margin-bottom: 50rpx;
+}
+
+.container .content-wrap .profit-wrap .all .value {
+  font-size: 48rpx;
+}
+
+.container .content-wrap .profit-wrap .branch {
+  justify-content: space-between;
+}
+
+.container .content-wrap .card-wrap {
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  padding: 25rpx;
+  margin-bottom: 24rpx;
+}
+
+.container .content-wrap .card-wrap .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+  margin-bottom: 30rpx;
+}
+
+.container .content-wrap .card-wrap .top .title {
+  font-size: 30rpx;
+}
+
+.container .content-wrap .card-wrap .top .sub {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.container .content-wrap .card-wrap .items-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .content-wrap .card-wrap .items-wrap .item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.container .content-wrap .card-wrap .items-wrap .item .img-wrap {
+  width: 41rpx;
+  height: 41rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.container .content-wrap .card-wrap .items-wrap .item .img-wrap image {
+  display: block;
+  max-width: 41rpx;
+  max-height: 41rpx;
+}
+
+.container .content-wrap .card-wrap .items-wrap .item .function-wrap {
+  width: 46rpx;
+  height: 72rpx;
+}
+
+.container .content-wrap .card-wrap .items-wrap .item .function-wrap image {
+  display: block;
+  max-width: 46rpx;
+  max-height: 72rpx;
+}
+
+.container .content-wrap .card-wrap .link {
+  font-size: 28rpx;
+  line-height: 28.8rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+  justify-content: space-between;
+}
+
+.container .content-wrap .card-wrap .link .link-left image {
+  width: 34rpx;
+  height: 34rpx;
+  display: block;
+  margin-right: 20rpx;
+}
+
+.container .content-wrap .last-card {
+  margin-bottom: 0;
+}
+
+.container .content-wrap .logout {
+  padding: 40rpx 30rpx 0;
+}
+
+.container .content-wrap .logout .btn-style {
+  padding: 20rpx 100rpx;
+}
+
+.container .no-login .no-list {
+  margin-bottom: 40rpx;
+}
+
+.logout-bg {
+  background-color: #fff;
+}

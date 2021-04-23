@@ -1,0 +1,42 @@
+.container {
+  .record-wrap {
+    .list-wrap {
+      background-color: #ffffff;
+      border-radius: 10rpx;
+      padding: 20rpx 0;
+      .list-item {
+        padding: 20rpx 50rpx;
+        justify-content: space-between;
+        background-color: #fff;
+        &:nth-child(2n) {
+          background-color: #fff7f3;
+        }
+        .left-info {
+          .name {
+            font-size: 26rpx;
+            line-height: 46rpx;
+            letter-spacing: 0rpx;
+            color: #333333;
+          }
+          .time {
+            font-size: 26rpx;
+            line-height: 46rpx;
+            letter-spacing: 0rpx;
+            color: #999999;
+          }
+        }
+        .right-info {
+          font-size: 30rpx;
+          line-height: 46rpx;
+          letter-spacing: 0rpx;
+          .come-in {
+            color: #ff3636;
+          }
+          .come-out {
+            color: #3682ff;
+          }
+        }
+      }
+    }
+  }
+}

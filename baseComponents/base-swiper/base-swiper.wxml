@@ -1,0 +1,17 @@
+<!-- baseComponents/base-swiper/base-swiper.wxml -->
+<view class="base-swiper-wrap">
+  <swiper indicator-dots="{{indicatorDots}}" bindchange="changeSwiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:{{swiperHeight}}rpx;">
+    <block wx:for="{{swiperList}}" wx:key="id">
+      <swiper-item>
+        <view bind:tap="handleTap" data-id="{{item.id}}" class="swiper-item">
+          <image src="{{item.picurl}}" class="item-img" style="height:{{swiperHeight}}rpx;"></image>
+          <!-- <image src="https://dummyimage.com/750x240/000/fff" class="item-img"></image> -->
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 下方指示点 -->
+  <view wx:if="{{showDots&&swiperList.length>1}}" class="dots-wrap dots-style">
+    <view wx:for="{{swiperList}}" wx:key="index" class="dot-item {{index === currentPage?'active-item':''}}"></view>
+  </view>
+</view>

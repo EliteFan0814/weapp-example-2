@@ -1,0 +1,140 @@
+<!-- pages/confirmOrder/confirmOrder.wxml -->
+<view class="container">
+  <base-header showLeft navOpacity="{{1}}" title="确认订单"></base-header>
+  <view class="confirm-order">
+    <!-- 展示配送方式的地址选择 -->
+    <view wx:if="{{getWay === 'autoGet'}}" class="address-wrap frame">
+      <view bind:tap="openAddress" class="address flex">
+        <view class="left flex">
+          <image src="/static/img/order/adr.png" class="icon-img"></image>
+          <view wx:if="{{addressId}}" class="text flex-dc">
+            <view class="address-text">{{address.address}} {{address.address_detail}}</view>
+            <view class="link">{{address.linkman}} {{address.contact}}</view>
+          </view>
+          <view wx:else class="text">选择收货选址</view>
+        </view>
+        <van-icon color="#999999" name="arrow" />
+      </view>
+    </view>
+    <!-- 购物车产品信息 -->
+    <view wx:if="{{type === 'cart'}}" class="goods-wrap frame">
+      <view class="goods-list">
+        <view wx:for="{{cartInfoList}}" wx:key="id" class="goods-item">
+          <view class="item-content flex">
+            <image src="{{item.spec_info.picurl}}" class="good-img"></image>
+            <view class="right-info flex-ds">
+              <view class="title omit-1">{{item.spec_info.goods_name}}</view>
+              <view class="tag omit-1">
+                <text>{{item.spec_info.spec_name}}</text>
+              </view>
+              <view class="price-wrap flex">
+                <view class="price">
+                  <text>
+                    <text class="symbol">￥</text>
+                    <text class="price-num">{{item.spec_info.price}}</text>
+                  </text>
+                </view>
+                <view class="number">x{{item.buy_num}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="other-user flex">
+            <view class="left flex"></view>
+            <view class="right-text red">合计：￥{{item.xiaoji}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 立即购买产品信息 -->
+    <view wx:if="{{type === 'buyNow'}}" class="goods-wrap frame">
+      <view class="goods-list">
+        <view class="goods-item">
+          <view class="item-content flex">
+            <image src="{{goodInfo.picurl}}" class="good-img"></image>
+            <view class="right-info flex-ds">
+              <view class="title omit-1">{{goodInfo.goods_name}}</view>
+              <view class="tag omit-1">
+                <text>{{goodInfo.spec_name}}</text>
+              </view>
+              <view class="price-wrap flex">
+                <view class="price">
+                  <text>
+                    <text class="symbol">￥</text>
+                    <text class="price-num">{{goodInfo.price}}</text>
+                  </text>
+                </view>
+                <view class="number">x{{confirmInfo.buy_num}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="other-user flex">
+            <view class="left flex">商品总价：</view>
+            <view class="right-text red">￥{{orderfee}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 积分兑换产品信息 -->
+    <view wx:if="{{type === 'exchange'}}" class="goods-wrap frame">
+      <view class="goods-list">
+        <view class="goods-item">
+          <view class="item-content flex">
+            <image src="{{buyNowProd.thumbHost}}" class="good-img"></image>
+            <view class="right-info flex-ds">
+              <view class="title omit-1">{{buyNowProd.name}}</view>
+              <!-- <view class="tag omit-1">
+                <text>{{buyNowProd.skuName}}</text>
+              </view> -->
+              <view class="price-wrap flex">
+                <view class="price">
+                  <text>
+                    <text class="symbol">所需积分：</text>
+                    <text class="price-num">{{buyNowProd.integral}}</text>
+                  </text>
+                </view>
+                <view class="number">x{{buyNowNum}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="other-user flex">
+            <view class="left flex">合计积分：</view>
+            <view class="right-text red">{{total}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 备注留言 -->
+    <!-- <view class="leave-msg frame flex">
+      <view class="msg-name">备注：</view>
+      <view>
+        <input value="{{ remarks }}" bind:input="handelRemarks" placeholder="请输入您的备注信息" />
+      </view>
+    </view> -->
+    <!-- 支付方式 -->
+    <!-- <view wx:if="{{type !== 'exchange'}}" class="pay-wrap frame">
+      <van-radio-group value="{{radio}}" bind:change="onChange" data-name="radio">
+        <view class="pay-item flex" bind:tap="changePayWay" data-way="WX">
+          <view class="left flex">
+            <image mode="widthFix" src="/static/img/icon/wx.png" />
+            <text class="color-wx">微信支付</text>
+          </view>
+          <van-radio name="WX" class="right" checked-color="#00D71B"></van-radio>
+        </view>
+      </van-radio-group>
+    </view> -->
+    <view class="pay-wrap frame">
+      <view class="pay-item flex">
+        <view>当前余额：</view>
+        <view class="red">{{balance}}</view>
+      </view>
+    </view>
+    <!-- 支付按钮 -->
+    <view class="btm-btn flex">
+      <view class="text">
+        <text>所需总金额：</text>
+        <text class="red">￥{{orderfee}}</text>
+      </view>
+      <base-btn btnName="立即购买" isPushing="{{isPushing}}" bind:handleTap="confirmOrder" btn-style="btn-style"></base-btn>
+    </view>
+  </view>
+</view>

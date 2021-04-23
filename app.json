@@ -1,0 +1,106 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/spread/spread",
+    "pages/bonus/bonus",
+    "pages/class/class",
+    "pages/login/login",
+    "pages/forbidden/forbidden",
+    "pages/regist/regist",
+    "pages/cart/cart",
+    "pages/order/order",
+    "pages/billRecord/billRecord",
+    "pages/withdraw/withdraw",
+    "pages/withdrawRecord/withdrawRecord",
+    "pages/withdrawToBalance/withdrawToBalance",
+    "pages/search/search",
+    "pages/searchResults/searchResults",
+    "pages/orderDetails/orderDetails",
+    "pages/addressEdit/addressEdit",
+    "pages/addressList/addressList",
+    "pages/goodDetail/goodDetail",
+    "pages/confirmOrder/confirmOrder",
+    "pages/announcement/announcement",
+    "pages/announcementDetail/announcementDetail",
+    "pages/team/team",
+    "pages/withdrawManage/withdrawManage",
+    "pages/clientOrder/clientOrder",
+    "pages/clientOrderDetails/clientOrderDetails",
+    "pages/dealerOrder/dealerOrder",
+    "pages/dealerOrderDetails/dealerOrderDetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取定位"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#BBBBBB",
+    "selectedColor": "#45332A",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/img/index.png",
+        "selectedIconPath": "static/img/indexActive.png"
+      },
+      {
+        "pagePath": "pages/class/class",
+        "text": "分类",
+        "iconPath": "static/img/class.png",
+        "selectedIconPath": "static/img/classActive.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "static/img/cart.png",
+        "selectedIconPath": "static/img/cartActive.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "static/img/personal.png",
+        "selectedIconPath": "static/img/personalActive.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "base-header": "baseComponents/base-header/base-header",
+    "base-btn": "baseComponents/base-btn/base-btn",
+    "base-no-list": "baseComponents/base-no-list/base-no-list",
+    "base-search": "baseComponents/base-search/base-search",
+    "base-pre-img": "baseComponents/base-pre-img/base-pre-img",
+    "base-class-swiper": "baseComponents/base-class-swiper/base-class-swiper",
+    "base-swiper": "baseComponents/base-swiper/base-swiper",
+    "base-class-list": "baseComponents/base-class-list/base-class-list",
+    "base-personal-info": "baseComponents/base-personal-info/base-personal-info",
+    "van-field": "@vant/weapp/field/index",
+    "van-count-down": "@vant/weapp/count-down/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-tree-select": "@vant/weapp/tree-select/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-area": "@vant/weapp/area/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-radio": "@vant/weapp/radio",
+    "van-radio-group": "@vant/weapp/radio-group",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

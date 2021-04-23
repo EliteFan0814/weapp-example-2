@@ -1,0 +1,40 @@
+/* baseComponents/base-header.wxss */
+.base-header-wrap .header {
+  position: fixed;
+  z-index: 999;
+  width: 750rpx;
+  padding-bottom: 6px;
+}
+
+.base-header-wrap .header .route-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  line-height: 32px;
+  height: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+}
+
+.base-header-wrap .header .route-wrap .item {
+  box-sizing: border-box;
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.base-header-wrap .header .route-wrap .left {
+  padding-left: 15px;
+  justify-content: flex-start;
+}
+
+.base-header-wrap .header .route-wrap .title {
+  width: 400rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}

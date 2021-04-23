@@ -1,0 +1,52 @@
+/* pages/announcement/announcement.wxss */
+.container {
+  background-color: #f5f5f5;
+}
+
+.container .articleList {
+  padding-bottom: 20rpx;
+}
+
+.container .articleList .articleList-item {
+  background-color: #ffffff;
+  margin-top: 30rpx;
+  border-radius: 18rpx;
+  box-shadow: 0 0 14rpx 10rpx #eeeeee;
+  padding: 20rpx;
+}
+
+.container .articleList .articleList-item .img {
+  width: 200rpx;
+  height: 150rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.container .articleList .articleList-item .img image {
+  width: 200rpx;
+  height: 150rpx;
+}
+
+.container .articleList .articleList-item .info {
+  padding: 0 16rpx;
+  height: 100%;
+}
+
+.container .articleList .articleList-item .info .info-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.container .articleList .articleList-item .info .info-desc {
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 40rpx;
+  height: 80rpx;
+  margin: 10rpx 0;
+}
+
+.container .articleList .articleList-item .info .info-date {
+  font-size: 26rpx;
+  color: #999999;
+}

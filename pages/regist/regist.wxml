@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="bg-wrap">
+    <image src="/static/img/login/login-bg.png"></image>
+  </view>
+  <view class="login-wrap">
+    <!-- <view wx:if="{{false}}" class="login-first flex-dc">
+      <view class="title">
+        <view>Hi~</view>
+        <view>欢迎登录瓶里香</view>
+      </view>
+      <view class="login">
+        <base-btn btnName="立即登录" btn-style="btn-style" bind:handleTap="handleLogin"></base-btn>
+      </view>
+    </view> -->
+    <view class="login-second flex-dc">
+      <view class="title">
+        <view>Hi~</view>
+        <view>欢迎使用瓶里香</view>
+      </view>
+      <!-- <view class="pub-title">请根据提示进行注册</view> 
+       <view class="input-wrap">
+        <van-cell-group>
+          <van-field value="{{ phone }}" placeholder="{{hasUserInfo?'请授权手机号':'请先授权头像昵称'}}" border="{{ false }}" disabled label-class="input-style" />
+        </van-cell-group>
+      </view> -->
+      <view wx:if="{{needSpreadCode}}" class="input-wrap">
+        <van-cell-group>
+          <van-field value="{{ spread_code }}" placeholder="请输入邀请码" border="{{ false }}" data-name="spread_code" bind:change="onChange" label-class="input-style" />
+        </van-cell-group>
+      </view>
+      <view class="login flex-dc">
+        <!-- <base-btn wx:if="{{!hasUserInfo}}" btnName="微信一键登录" btn-style="btn-style" bind:handleTap="getWxUserInfo"></base-btn> -->
+        <view wx:if="{{hasUserInfo&&!mobileAuth}}" class="btn-wrap">
+          <button class="bind-btn" loading="{{isGetting}}" type="default" size="mini" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+            微信一键登录
+          </button>
+        </view>
+        <base-btn wx:if="{{hasUserInfo&&mobileAuth}}" isPushing="{{isPushing}}" btnName="微信一键登录" btn-style="btn-style" bind:handleTap="handleRegist"></base-btn>
+      </view>
+    </view>
+  </view>
+</view>

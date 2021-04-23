@@ -1,0 +1,86 @@
+.container {
+  background-color: #f5f5f5;
+  position: relative;
+  .bg-wrap {
+    image {
+      display: block;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+  .login-wrap {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48rpx;
+    line-height: 58.2rpx;
+    letter-spacing: 0rpx;
+    color: #000;
+    .login-first {
+      .title {
+        text-align: center;
+        margin-bottom: 135rpx;
+      }
+      .btn-style {
+        padding: 30rpx 200rpx;
+        border-radius: 47.5rpx;
+      }
+    }
+    .login-second {
+      .title {
+        text-align: center;
+        margin-bottom: 50rpx;
+      }
+      .pub-title {
+        font-size: 32rpx;
+        line-height: 43.2rpx;
+        letter-spacing: 0rpx;
+        color: #000;
+        margin-bottom: 80rpx;
+      }
+      .input-wrap {
+        width: 510rpx;
+        margin-bottom: 20rpx;
+        background-color: #fbf7f4;
+        border-radius: 20rpx;
+        overflow: hidden;
+        .van-cell {
+          background-color: #fbf7f4 !important;
+        }
+      }
+      .login {
+        .btn-wrap {
+          margin-bottom: 20rpx;
+          .bind-btn {
+            display: inline-block;
+            border: 1px solid green;
+            border: none;
+            &::after {
+              border: none;
+            }
+            width: 500rpx;
+            padding: 30rpx 0;
+            border-radius: 47.5rpx;
+            font-size: 32rpx;
+            line-height: 29rpx;
+            letter-spacing: 2rpx;
+            color: #fff;
+            overflow: hidden;
+            background-blend-mode: normal, normal;
+            background-image: linear-gradient(-85deg, #45332a 0%, #4f3d35 33%, #58473f 100%),
+              linear-gradient(#ffd400, #ffd400);
+            box-shadow: 0rpx 10rpx 43rpx 0rpx rgba(69, 51, 42, 0.54);
+          }
+        }
+        .btn-style {
+          width: 500rpx;
+          padding: 30rpx 0;
+          border-radius: 47.5rpx;
+          margin-bottom: 20rpx;
+        }
+      }
+    }
+  }
+}

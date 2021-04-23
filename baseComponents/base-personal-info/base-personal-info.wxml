@@ -1,0 +1,17 @@
+<view class="base-personal-info">
+  <view class="left-wrap">
+    <image src="{{userInfo.thumb||'/static/img/logo.png'}}" class="avatar"></image>
+    <view wx:if="{{isLogin}}" class="content-wrap">
+      <view class="name">{{userInfo.nickname}}</view>
+      <view>
+        <text class="integral">{{userInfo.account}}</text>
+      </view>
+    </view>
+    <view wx:else class="content-wrap">
+      <base-btn btnName="立即登录" bind:handleTap="handleLogin"></base-btn>
+    </view>
+  </view>
+  <view wx:if="{{showRight}}" bind:tap="handleSetting" class="right-wrap">
+    <image src="./setting.svg" class="setting"></image>
+  </view>
+</view>

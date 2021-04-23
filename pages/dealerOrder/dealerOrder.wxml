@@ -1,0 +1,72 @@
+<!-- pages/order/order.wxml -->
+<view class="container">
+  <base-header title="经销商订单" showLeft></base-header>
+  <van-tabs wx:if="{{tabList.length}}" active="{{ status }}" sticky bind:click="onChange">
+    <van-tab wx:for="{{tabList}}" name="{{item.value}}" data-name="{{item.value}}" wx:key="value" title="{{item.label}}"></van-tab>
+  </van-tabs>
+  <view class="scroll">
+    <view class="order-list" wx:if="{{list.length}}">
+      <view class="order-item" wx:for="{{list}}" wx:key="id" bindtap="openOrderDetail" data-id="{{item.order_id}}">
+        <view class="title flex">
+          <text>订单号：{{item.order_sn}}</text>
+          <text class="red {{(item.status>0) ? 'success' : ''}}">{{item.status_str}}</text>
+        </view>
+        <view class="info">
+          <view class="goods-list">
+            <view class="goods-item flex" wx:for="{{item.order_item}}" wx:key="index" wx:for-item="child" data-id="{{item.order_id}}">
+              <image src="{{child.picurl}}" class="good-img"></image>
+              <view class="right-info flex-dc">
+                <view class="name omit-1">{{child.goods_name}}</view>
+                <view class="spec">规格：{{child.spec_name}}</view>
+                <view class="price flex">
+                  <text>￥{{child.final_price}}</text>
+                  <text class="number">x {{child.buy_num}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- <view class="more-btn flex" catch:tap="openClick" data-index="{{index}}" data-item="{{item}}">
+            <text>共{{item.orderDetails.length}}件商品</text>
+            <view wx:if="{{item.orderDetails.length>1}}">
+              <image src="../../static/img/order/down.png" wx:if="{{!item.isOpen}}" mode="widthFix" class="icon" />
+              <image src="../../static/img/order/up.png" wx:else mode="widthFix" class="icon" />
+            </view>
+          </view> -->
+          <view class="total flex">
+            <!-- <text wx:if="{{item.selfPickUp}}" class="left">请到自提点自提</text>
+            <text wx:else class="left">{{item.selectSend}}前送达</text> -->
+            <text class="left"></text>
+            <text class="right">
+              <text class="word">合计：</text>
+              <text>￥{{item.order_fee}}</text>
+            </text>
+          </view>
+          <view class="refund" wx:if="{{item.refundStatus >= 10}}">{{item.refundStatusStr}}</view>
+        </view>
+        <view class="operation flex">
+          <view class="btn-wrap">
+            <base-btn btn-name="确认发货" btn-style=" base-style" wx:if="{{item.status === 1}}" catch:tap="openConfirmDialog" data-id="{{item.order_id}}"></base-btn>
+            <!-- <base-btn btn-name="确认收货" btn-style="base-style" wx:if="{{item.status === 2}}" catch:tap="confirmOrder" data-id="{{item.order_id}}"></base-btn> -->
+            <!-- <base-btn btn-name="立即付款" btn-style="red base-style" wx:if="{{item.payStatus == false && item.orderStatus != 50 && item.orderStatus != -1}}" catch:tap="pay" data-id="{{item.id}}" isPushing="{{isPushing}}"></base-btn> -->
+            <!-- <base-btn btn-name="申请退款" btn-style="red base-style" wx:if="{{item.payStatus && (item.orderStatus == 30||item.orderStatus == 35) && (item.refundStatus == 0 || item.refundStatus == 20) }}" catch:tap="refund" data-id="{{item.id}}"></base-btn> -->
+            <!-- <base-btn btn-name="去付款" btn-style="red base-style"></base-btn> -->
+            <!-- <base-btn btn-name="联系平台" btn-style=" base-style" catch:tap="makePhone"></base-btn> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <base-no-list wx:else widthWrap="100%" />
+  </view>
+  <van-popup show="{{deliverDialog}}" round close-on-click-overlay="{{false}}" bind:close="refundCancel">
+    <view class="deliverDialog">
+      <view class="title">请输入快递单号</view>
+      <view class="input-wrap">
+        <van-field value="{{ expressNum }}" label="快递单号：" placeholder="请输入快递单号" border="{{ false }}" bind:change="inputChange" data-name="expressNum" />
+      </view>
+      <view class="btn-wrap flex-cc">
+        <base-btn btnName="取消" btn-style="btn-style cancel" bind:handleTap="cancelDeliver"></base-btn>
+        <base-btn btnName="确认" btn-style="btn-style" isPushing="{{idDelivering}}" bind:handleTap="confirmDeliver"></base-btn>
+      </view>
+    </view>
+  </van-popup>
+</view>

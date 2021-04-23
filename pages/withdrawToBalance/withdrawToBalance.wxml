@@ -1,0 +1,10 @@
+<view class="container">
+  <base-header title="转账至余额"></base-header>
+  <view class="title">转账金额(元)</view>
+  <view class="input-wrap">
+    <input type="digit" value="{{money}}" data-name="money" bind:input="setInputVal" placeholder="请输入转账金额" />
+  </view>
+  <view class="btn-wrap flex-cc">
+    <base-btn btnName="立即转账" :isPushing="isPushing" btn-style="btn-style" bind:handleTap="withdrawToBalance"></base-btn>
+  </view>
+</view>

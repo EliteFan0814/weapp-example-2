@@ -1,0 +1,56 @@
+.container .flex {
+  display: flex;
+  align-items: center;
+}
+
+.container .van-dropdown-menu {
+  height: auto !important;
+}
+
+.container .title {
+  font-size: 32rpx;
+  color: #8d8d8d;
+  margin-bottom: 20rpx;
+  padding: 20rpx 30rpx;
+}
+
+.container .title .sub-title {
+  font-size: 25rpx;
+}
+
+.container .input-wrap {
+  margin: 0 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #d1d1d1;
+}
+
+.container .input-wrap input {
+  font-size: 40rpx;
+}
+
+.container .form-wrap .form-item {
+  font-size: 30rpx;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  justify-content: space-between;
+}
+
+.container .form-wrap .form-item .value-wrap .van-dropdown-menu {
+  box-shadow: none !important;
+}
+
+.container .form-wrap .form-item input {
+  text-align: right;
+}
+
+.container .btn-wrap {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.container .btn-wrap .btn-style {
+  width: 100%;
+  border-radius: 0;
+  padding: 30rpx 0;
+}

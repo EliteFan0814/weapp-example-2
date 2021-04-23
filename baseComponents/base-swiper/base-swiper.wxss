@@ -1,0 +1,40 @@
+.base-swiper-wrap {
+  position: relative;
+}
+
+.base-swiper-wrap .swiper-item .item-img {
+  width: 100%;
+}
+
+.base-swiper-wrap .dots-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.base-swiper-wrap .dots-wrap .dot-item {
+  width: 14rpx;
+  height: 5rpx;
+  background-color: #dddddd;
+  border-radius: 50%;
+  margin: 0 8rpx;
+  transition: all 0.3s;
+}
+
+.base-swiper-wrap .dots-wrap .dot-item:first-child {
+  margin-left: 0;
+}
+
+.base-swiper-wrap .dots-wrap .dot-item:last-child {
+  margin-right: 0;
+}
+
+.base-swiper-wrap .dots-wrap .active-item {
+  background-color: #ff6f36;
+  width: 40rpx;
+  border-radius: 14rpx;
+}

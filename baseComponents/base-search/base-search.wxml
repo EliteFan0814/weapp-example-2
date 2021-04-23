@@ -1,0 +1,6 @@
+  <view bind:tap="handleTap" class="base-search-wrap">
+    <view class="search flex-cc search-style">
+      <image wx:if="{{showImg}}" src="./search.png" class="search-img"></image>
+      <text>{{title}}</text>
+    </view>
+  </view>

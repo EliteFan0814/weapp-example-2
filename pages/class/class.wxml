@@ -1,0 +1,22 @@
+<view class="container">
+  <block wx:if="{{isLogin}}">
+    <base-header navOpacity="{{0}}" title="分类" titleColor="{{titleColor}}" showLeft="{{false}}" id="base-header">
+      <view class="search-wrap">
+        <base-search bind:handleTap="openSearch"></base-search>
+      </view>
+    </base-header>
+    <view class="bg-img">
+      <image src="/static/img/index/top-bg.png" style="height:{{150+capsuleToTop}}px"></image>
+    </view>
+    <view class="content-wrap" style="top:{{100+capsuleToTop}}px">
+      <base-class-list classList="{{classList}}" propActiveItemIndex="{{selectedClassIndex}}" residueHeight="{{100+capsuleToTop}}"></base-class-list>
+    </view>
+  </block>
+  <block wx:else>
+    <base-header title="分类" showLeft="{{false}}"></base-header>
+    <view class="no-login flex-dc">
+      <base-no-list class="no-list" title="您还未登录，请先登录"></base-no-list>
+      <base-btn btnName="立即登录" bind:handleTap="openLoginPage"></base-btn>
+    </view>
+  </block>
+</view>

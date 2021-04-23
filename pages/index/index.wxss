@@ -1,0 +1,125 @@
+.container {
+  position: relative;
+}
+
+.container .bg-img {
+  top: 0;
+  position: absolute;
+}
+
+.container .bg-img image {
+  width: 750rpx;
+}
+
+.container .swiper-wrap {
+  margin: 20rpx 30rpx;
+}
+
+.container .swiper-wrap swiper {
+  height: 270rpx;
+}
+
+.container .swiper-wrap .swiper-item image {
+  border-radius: 18.12rpx;
+  overflow: hidden;
+  width: 690rpx;
+  height: 270rpx;
+}
+
+.container .class-swiper {
+  margin-bottom: 24rpx;
+}
+
+.container .recommend-wrap {
+  background-color: #3d2e26;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+}
+
+.container .recommend-wrap .title {
+  padding: 24rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  letter-spacing: 0rpx;
+  color: #ffffff;
+}
+
+.container .recommend-wrap .good-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap {
+  box-sizing: border-box;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item {
+  box-sizing: border-box;
+  width: 335rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item .img-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rpx;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item .img-wrap .good-img {
+  width: 100%;
+  height: 237rpx;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item .btm-wrap {
+  padding: 0 10rpx 10rpx;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item .btm-wrap .name {
+  font-size: 30rpx;
+  letter-spacing: 1rpx;
+  color: #000104;
+  font-weight: bolder;
+  text-overflow: ellipsis;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item .btm-wrap .sold {
+  font-size: 26rpx;
+  line-height: 36rpx;
+  letter-spacing: 0rpx;
+  color: #bbbbbb;
+  margin-bottom: 10rpx;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item .btm-wrap .price-wrap {
+  line-height: 36rpx;
+  letter-spacing: 0rpx;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item .btm-wrap .price-wrap .now {
+  font-size: 32rpx;
+  color: #fe2e2e;
+  padding-right: 20rpx;
+}
+
+.container .recommend-wrap .good-wrap .item-wrap .good-item .btm-wrap .price-wrap .sub {
+  text-decoration: line-through;
+  font-size: 26rpx;
+  color: #bbbbbb;
+}
+
+.container .no-login .no-list {
+  margin-bottom: 40rpx;
+}

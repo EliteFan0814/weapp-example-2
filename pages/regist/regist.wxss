@@ -1,0 +1,89 @@
+.container {
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.container .bg-wrap image {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+.container .login-wrap {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 48rpx;
+  line-height: 58.2rpx;
+  letter-spacing: 0rpx;
+  color: #000;
+}
+
+.container .login-wrap .login-first .title {
+  text-align: center;
+  margin-bottom: 135rpx;
+}
+
+.container .login-wrap .login-first .btn-style {
+  padding: 30rpx 200rpx;
+  border-radius: 47.5rpx;
+}
+
+.container .login-wrap .login-second .title {
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+.container .login-wrap .login-second .pub-title {
+  font-size: 32rpx;
+  line-height: 43.2rpx;
+  letter-spacing: 0rpx;
+  color: #000;
+  margin-bottom: 80rpx;
+}
+
+.container .login-wrap .login-second .input-wrap {
+  width: 510rpx;
+  margin-bottom: 20rpx;
+  background-color: #fbf7f4;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.container .login-wrap .login-second .input-wrap .van-cell {
+  background-color: #fbf7f4 !important;
+}
+
+.container .login-wrap .login-second .login .btn-wrap {
+  margin-bottom: 20rpx;
+}
+
+.container .login-wrap .login-second .login .btn-wrap .bind-btn {
+  display: inline-block;
+  border: 1px solid green;
+  border: none;
+  width: 500rpx;
+  padding: 30rpx 0;
+  border-radius: 47.5rpx;
+  font-size: 32rpx;
+  line-height: 29rpx;
+  letter-spacing: 2rpx;
+  color: #fff;
+  overflow: hidden;
+  background-blend-mode: normal, normal;
+  background-image: linear-gradient(-85deg, #45332a 0%, #4f3d35 33%, #58473f 100%), linear-gradient(#ffd400, #ffd400);
+  box-shadow: 0rpx 10rpx 43rpx 0rpx rgba(69, 51, 42, 0.54);
+}
+
+.container .login-wrap .login-second .login .btn-wrap .bind-btn::after {
+  border: none;
+}
+
+.container .login-wrap .login-second .login .btn-style {
+  width: 500rpx;
+  padding: 30rpx 0;
+  border-radius: 47.5rpx;
+  margin-bottom: 20rpx;
+}

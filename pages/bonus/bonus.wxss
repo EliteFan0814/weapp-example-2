@@ -1,0 +1,88 @@
+.container {
+  position: relative;
+}
+
+.container .bg-img {
+  top: 0;
+  position: absolute;
+}
+
+.container .bg-img image {
+  width: 750rpx;
+}
+
+.container .card-wrap {
+  box-sizing: border-box;
+  position: relative;
+  letter-spacing: 0rpx;
+  color: #ffffff;
+}
+
+.container .card-wrap .balance {
+  font-size: 68rpx;
+}
+
+.container .card-wrap .name {
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+}
+
+.container .card-wrap .operation-wrap {
+  justify-content: space-around;
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  letter-spacing: 0rpx;
+  color: #ffffff;
+}
+
+.container .card-wrap .operation-wrap .operation-item image {
+  width: 36rpx;
+  height: 36rpx;
+  display: block;
+  margin-right: 10rpx;
+}
+
+.container .list-wrap {
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  padding: 50rpx 0;
+}
+
+.container .list-wrap .list-item {
+  padding: 20rpx 50rpx;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.container .list-wrap .list-item:nth-child(2n) {
+  background-color: #fff7f3;
+}
+
+.container .list-wrap .list-item .left-info .name {
+  font-size: 26rpx;
+  line-height: 46rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+}
+
+.container .list-wrap .list-item .left-info .time {
+  font-size: 26rpx;
+  line-height: 46rpx;
+  letter-spacing: 0rpx;
+  color: #999999;
+}
+
+.container .list-wrap .list-item .right-info {
+  font-size: 30rpx;
+  line-height: 46rpx;
+  letter-spacing: 0rpx;
+}
+
+.container .list-wrap .list-item .right-info .come-in {
+  color: #ff3636;
+}
+
+.container .list-wrap .list-item .right-info .come-out {
+  color: #3682ff;
+}

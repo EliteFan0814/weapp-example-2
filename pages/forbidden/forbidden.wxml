@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="bg-wrap">
+    <image src="/static/img/login/login-bg.png"></image>
+  </view>
+  <view class="login-wrap">
+    <view class="login-first flex-dc">
+      <view class="title flex">
+        <image class="warn" src="/static/img/icon/warn.svg"></image>
+        <view>
+          <view>抱歉，</view>
+          <view>您的账户被禁用，详情请联系客服</view>
+        </view>
+      </view>
+      <view class="login">
+        <base-btn btnName="联系客服" btn-style="btn-style" data-phone="{{servePhone}}" bind:handleTap="callServer"></base-btn>
+      </view>
+      <view class="login">
+        <base-btn btnName="重新登录" btn-style="btn-style" isPushing="{{isPushing}}" bind:handleTap="reLogin"></base-btn>
+      </view>
+    </view>
+  </view>
+</view>

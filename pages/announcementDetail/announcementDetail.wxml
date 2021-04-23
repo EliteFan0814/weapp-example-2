@@ -1,0 +1,11 @@
+<!-- pages/announcementDetail/announcementDetail.wxml -->
+<view class="container">
+    <base-header title="公告详情"></base-header>
+    <view class="detail frame">
+        <view class="detail-title omit-1">{{title}}</view>
+        <view class="detail-main">
+            <rich-text nodes="{{noticeDetail}}"></rich-text>
+        </view>
+        <view class="detail-date">{{createTime}}</view>
+    </view>
+</view>

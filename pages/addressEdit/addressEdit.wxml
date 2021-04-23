@@ -1,0 +1,19 @@
+<!-- pages/addressEdit/addressEdit.wxml -->
+<view class="container">
+  <base-header title="{{title}}" showLeft></base-header>
+  <view class="form-wrap">
+    <van-cell-group>
+      <van-field bind:change="inputChange" data-name="info.linkman" value="{{ info.linkman }}" clearable label="联系人：" placeholder="请输入联系人" input-align="right" />
+      <van-field bind:change="inputChange" data-name="info.contact" value="{{ info.contact }}" type="number" label="联系电话：" placeholder="请输入联系电话" clearable input-align="right" />
+      <van-field bind:tap="openMap" clearable value="{{ info.address }}" readonly label="选择地址：" placeholder="请选择地址" input-align="right" />
+      <!-- <van-field wx:else bind:tap="showAuthPosition" clearable value="{{ info.area }}" readonly label="地图选址：" placeholder="请点击授权定位" input-align="right" /> -->
+      <van-field bind:change="inputChange" data-name="info.address_detail" value="{{ info.address_detail }}" label="详细地址：" placeholder="请输入详细地址" clearable input-align="right" />
+    </van-cell-group>
+  </view>
+  <view bind:tap="confirm" class="add-wrap flex-cc">
+    <text>保存</text>
+  </view>
+  <van-popup show="{{showDialog}}" position="bottom" overlay="{{true}}" bind:close="closeDialog">
+    <van-area area-list="{{areaList}}" value="{{adressNum}}" bind:cancel="closeDialog" bind:confirm="confirmAddress" />
+  </van-popup>
+</view>

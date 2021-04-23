@@ -1,0 +1,29 @@
+/* pages/withdrawManage/withdrawManage.wxss */
+.container {
+    background-color: #f5f5f5;
+
+    .manage {
+        padding-top: 30rpx;
+
+        .form {
+            margin-top: 30rpx;
+            border-radius: 16rpx;
+            overflow: hidden;
+        }
+
+
+    }
+
+    .button {
+        margin-top: 60rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .btn-style {
+            width: 400rpx;
+            height: 50rpx;
+            line-height: 50rpx;
+        }
+    }
+}

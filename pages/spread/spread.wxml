@@ -1,0 +1,14 @@
+<view class="container">
+  <base-header navOpacity="{{navOpacity}}" title="" useHeight="{{false}}" titleColor="{{titleColor}}"></base-header>
+  <view class="bg-img">
+    <image src="/static/img/other/spread-bg.png" style="height:{{200+capsuleToTop}}px"></image>
+  </view>
+  <image class="gift-img" style="top:{{150+capsuleToTop}}px" src="/static/img/other/gift.png"></image>
+  <view class="content-wrap frame" style="height:calc(100vh - 200px - {{capsuleToTop}}px)">
+    <view class="text flex-cc">推广二维码</view>
+    <view class="text flex-cc">{{spreadCode}}</view>
+    <view class="img-wrap flex-cc">
+      <image></image>
+    </view>
+  </view>
+</view>

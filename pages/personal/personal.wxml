@@ -1,0 +1,123 @@
+<view class="container {{isLogin?'':'logout-bg'}}">
+  <block wx:if="{{isLogin}}">
+    <base-header navOpacity="{{navOpacity}}" title="瓶里香" titleColor="{{titleColor}}" showLeft="{{false}}"></base-header>
+    <view class="bg-img">
+      <image src="/static/img/personal/top-bg.png" style="height:{{150+capsuleToTop}}px"></image>
+    </view>
+    <view class="content-wrap">
+      <view class="info-wrap">
+        <base-personal-info userInfo="{{userInfo}}" isLogin="{{isLogin}}" showRight="{{false}}" bind:handleLogin="openLoginPage"></base-personal-info>
+      </view>
+      <!-- 账户余额 -->
+      <view class="property-wrap frame flex">
+        <view bind:tap="openBillRecord" class="property-item flex-dc">
+          <view class="name">账户余额（元）</view>
+          <view class="value">{{userInfo.amount}}</view>
+        </view>
+        <view wx:if="{{userType === 'member'}}" class="property-item"></view>
+        <view wx:else bind:tap="openBonus" class="property-item flex-dc">
+          <view class="name">奖金账户</view>
+          <view class="value">{{userInfo.reward}}</view>
+        </view>
+        <view bind:tap="openBillRecord" class="property-item flex-dc">
+          <view class="bill flex">
+            <text>我的账单</text>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </view>
+      <!-- 代理商利润板块 -->
+      <view wx:if="{{userType === 'agent'}}" class="profit-wrap frame">
+        <view class="all flex-dc">
+          <view class="name">总利润（元）</view>
+          <view class="value">{{userInfo.profit_all}}</view>
+        </view>
+        <view class="branch flex">
+          <view class="branch-item flex-dc">
+            <view class="name">今日利润</view>
+            <view class="value">{{userInfo.profit_today}}</view>
+          </view>
+          <view class="branch-item flex-dc">
+            <view class="name">总业绩</view>
+            <view class="value">{{userInfo.yeji}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 商品订单 -->
+      <view class="card-wrap frame">
+        <view class="top">
+          <view class="title">{{userType!=='member'?'进货':'商品'}}订单</view>
+          <view data-status="all" bind:tap="openOrder" class="sub">
+            <text>全部订单</text>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+        <view class="items-wrap">
+          <view wx:for="{{orderList}}" wx:key="value" data-status="{{item.value}}" data-is-make-phone="{{item.isMakePhone}}" bind:tap="openOrder" class="item">
+            <view class="img-wrap">
+              <image mode="aspectFit" src="{{item.img}}"></image>
+            </view>
+            <view class="name">{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 推广码 -->
+      <view wx:if="{{userType !== 'member'}}" class="card-wrap frame">
+        <!-- <view class="top">
+        <view class="title">我的上级代理商</view>
+        <view class="sub"></view>
+      </view> -->
+        <view class="items-wrap link flex">
+          <view class="link-left flex">
+            <image src="/static/img/personal/spread.svg"></image>
+            <text>我的推广码</text>
+          </view>
+          <view bind:tap="copyText" data-text="{{userInfo.spread_code}}" class="link-right">
+            {{userInfo.spread_code}}
+          </view>
+        </view>
+      </view>
+      <!-- 上级代理 -->
+      <view wx:if="{{userType === 'dealer'}}" class="card-wrap frame">
+        <view class="top">
+          <view class="title">我的上级代理商</view>
+          <view class="sub"></view>
+        </view>
+        <view class="items-wrap link flex">
+          <view class="link-left flex">
+            <image src="/static/img/personal/phone.png"></image>
+            <text>联系方式</text>
+          </view>
+          <view bind:tap="makeCall" data-phone="{{supAgentPhone}}" class="link-right">{{supAgentPhone}}</view>
+        </view>
+      </view>
+      <view class="card-wrap last-card frame">
+        <view class="top">
+          <view class="title">基础功能</view>
+          <view class="sub">
+            <!-- <text>全部订单</text>
+          <van-icon name="arrow" /> -->
+          </view>
+        </view>
+        <view class="items-wrap">
+          <view wx:for="{{filterOperationList}}" wx:key="value" class="item" data-url="{{item.url}}" data-spread-code="{{userInfo.spread_code}}" bindtap="jumpPage">
+            <view class="function-wrap img-wrap">
+              <image mode="aspectFit" src="{{item.img}}"></image>
+            </view>
+            <view class="name">{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="logout flex-cc">
+        <base-btn btnName="退出登录" btn-style="btn-style" isPushing="{{isLogouting}}" bind:handleTap="handleLogout"></base-btn>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <base-header title="瓶里香" showLeft="{{false}}"></base-header>
+    <view class="no-login flex-dc">
+      <base-no-list class="no-list" title="您还未登录，请先登录"></base-no-list>
+      <base-btn btnName="立即登录" bind:handleTap="openLoginPage"></base-btn>
+    </view>
+  </block>
+</view>

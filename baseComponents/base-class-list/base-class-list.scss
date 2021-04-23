@@ -1,0 +1,106 @@
+.base-class-list {
+  // 单行显示
+  .omit-1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  // 是否隐藏滚动条
+  .hide-scroll-bar {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  display: flex;
+  // 左侧 aside 栏
+  .aside-wrap {
+    // border: 1px solid red;
+    background-color: #f7f8fa;
+    width: 25%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    font-size: 28rpx;
+    .class-item {
+      border-left: 3px solid transparent;
+      padding: 20rpx 0 20rpx 10rpx;
+      margin: 10rpx 0;
+    }
+    .active-item {
+      font-weight: bold;
+      background-color: #fff;
+      border-left: 3px solid #45332a;
+    }
+  }
+
+  // 右侧内容区
+  .content-wrap {
+    background-color: #fff;
+    flex-grow: 1;
+    padding: 15rpx;
+    .normal-good-item {
+      margin-bottom: 20rpx;
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      // box-shadow: 0rpx 5rpx 45rpx 0rpx rgba(0, 0, 0, 0.06);
+      .img-wrap {
+        width: 190rpx;
+        height: 190rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .item-img {
+          width: 190rpx;
+          height: 190rpx;
+        }
+      }
+      .name-wrap {
+        box-sizing: border-box;
+        padding: 10rpx 35rpx;
+        .omit-2 {
+          font-weight: bold;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+        .name {
+          font-size: 28rpx;
+          font-weight: bold;
+          margin-bottom: 15rpx;
+        }
+        .sub-name {
+          display: flex;
+          align-items: center;
+           font-size: 28rpx;
+          color: #666;
+          margin-bottom: 50rpx;
+          .sub-icon {
+            margin: 0 10rpx;
+            width: 26rpx;
+            height: 26rpx;
+          }
+        }
+        .price-wrap {
+          display: flex;
+          align-items: center;
+          .red {
+            font-size: 28rpx;
+            letter-spacing: 0.5rpx;
+            color: #ff4b4b;
+            margin-right: 20rpx;
+          }
+          .grey {
+             font-size: 28rpx;
+            letter-spacing: 0.5rpx;
+            color: #a6a6a6;
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  .title {
+    font-size: 32rpx;
+    color: #8d8d8d;
+    margin-bottom: 20rpx;
+    padding: 20rpx 30rpx;
+  }
+  .input-wrap {
+    margin: 0 30rpx 70rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #d1d1d1;
+    input {
+      font-size: 40rpx;
+    }
+  }
+  .btn-wrap {
+    .btn-style {
+      padding: 20rpx 60rpx;
+    }
+  }
+}

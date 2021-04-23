@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="bg-wrap">
+    <image src="/static/img/login/login-bg.png"></image>
+  </view>
+  <view class="login-wrap">
+    <view wx:if="{{false}}" class="login-first flex-dc">
+      <view class="title">
+        <view>Hi~</view>
+        <view>欢迎登录瓶里香</view>
+      </view>
+      <view class="login">
+        <base-btn btnName="立即登录" btn-style="btn-style"></base-btn>
+      </view>
+    </view>
+    <view class="login-second flex-dc">
+      <view class="title">
+        <view>Hi~</view>
+        <view>欢迎登录</view>
+      </view>
+      <view class="pub-title">请输入邀请码</view>
+      <view class="input-wrap">
+        <van-cell-group>
+          <van-field value="{{ value }}" placeholder="请输入邀请码" border="{{ false }}" bind:change="onChange" label-class="input-style" />
+        </van-cell-group>
+      </view>
+      <view class="login">
+        <base-btn btnName="立即登录" btn-style="btn-style"></base-btn>
+      </view>
+    </view>
+  </view>
+</view>

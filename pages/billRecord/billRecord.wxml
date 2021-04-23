@@ -1,0 +1,29 @@
+<view class="container">
+  <base-header title="我的账单"></base-header>
+  <view class="record-wrap">
+    <view wx:if="{{userType!=='member'}}" class="tab-wrap">
+      <van-tabs active="{{active}}" bind:change="handleChangeTab">
+        <van-tab wx:for="{{tabList}}" wx:key="value" title="{{item.label}}" name="{{item.value}}"></van-tab>
+      </van-tabs>
+    </view>
+    <view wx:if="{{recordList.length}}" class="list-wrap frame">
+      <view wx:for="{{recordList}}" wx:key="id" class="list-item">
+        <view class="title flex">
+          <text class="remark red">{{item.amount}}</text>
+          <!-- <text class="{{item.isIncome?'blue':'red'}}">{{item.isIncome?'+':'-'}}{{item.amount}}</text> -->
+          <text>{{item.class_str}}</text>
+        </view>
+        <view class="title flex">
+          <text></text>
+          <text class="time">{{item.remark}}</text>
+        </view>
+        <view class="time" style="text-align:right;">{{item.create_time}}</view>
+        <!-- <view class="">兑换人：{{item.memberName}}</view>
+        <view class="">联系电话：{{item.memberMobile}}</view>
+        <view class="remark">备注：{{item.remark}}</view>
+        <view class="time">{{item.createDate}}</view> -->
+      </view>
+    </view>
+    <base-no-list wx:else title="暂无流水信息"></base-no-list>
+  </view>
+</view>
